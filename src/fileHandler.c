@@ -37,7 +37,7 @@ void load_transactions(void) {
         line[strcspn(line, "\n")] = 0;
         
         //scans each line for anything fitting the format of some text|some number|some text
-        if (sscanf(line, "%99[^|]|%lf|%19[^|]", description, &amount, status) == 3) {
+        if (sscanf(line, "%99[^|]|%lf|%99[^|]", description, &amount, status) == 3) {
             TransactionNode *new_node = create_transaction_node(description, amount, status);
             if (new_node != NULL) {
                 insert_node_at_position(new_node, count_transactions() + 1);

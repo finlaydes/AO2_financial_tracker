@@ -175,7 +175,6 @@ void delete_transaction(void) {
         return;
     }
     
-    //find and delete the node
     if (index == 1) {
         TransactionNode *temp = head;
         head = head->next;
@@ -212,11 +211,10 @@ void print_transactions(void) {
     }
     
     printf("\n--- All Transactions ---\n");
-    printf("%-30s | %-10s | %-10s\n", "Description", "Amount", "Status");
+    printf("Description          | Amount    | Status\n");
     printf("---------------------------------------------------\n");
     
     TransactionNode *current = head;
-    double total_money = 0;
     int count = 1;
 
     while (current != NULL) {
@@ -225,7 +223,6 @@ void print_transactions(void) {
                current->description,
                current->amount,
                current->status);
-        total_money += current->amount;
         current = current->next;
         count = count + 1;
     }
