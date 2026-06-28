@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g -Iinclude -Isrc
 SRCS = src/main.c src/fileHandler.c src/linkedListHandler.c
 LOGS = logs/transaction_log.txt
-REPORT = report/report.txt
+REPORT = report/report.pdf
 OBJS = $(SRCS:.c=.o)
 RELEASE_DIR = release
 TARGET = $(RELEASE_DIR)/fintrack
